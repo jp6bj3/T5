@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div class="card mb-4 bg-dark px-2">
+        <div class="card mb-4 bg-dark px-2 shadow-lg">
           <div class="card-header text-white">
             <h5 class="card-title pt-3">Tasks</h5>
           </div>
@@ -21,7 +21,7 @@
       </div>
 
      <div class="col-md-6">
-        <div class="card mb-4 bg-dark px-2">
+        <div class="card mb-4 bg-dark px-2 shadow-lg">
           <div class="card-header text-white">
             <h5 class="card-title pt-3">reward</h5>
           </div>

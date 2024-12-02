@@ -4,7 +4,7 @@
       <!-- 左側 Logo 和導航文字 -->
       <div class="d-flex align-items-center">
        <RouterLink to="/"  class="nav-link text-white">        
-            <img src="your-logo.png" alt="Logo" class="logo me-3" />
+            <img src="" alt="Logo" class="logo me-3" />
          </RouterLink>
        <RouterLink to="/Task"  class="nav-link text-white">任務</RouterLink>
        <router-link to="/Shop"  class="nav-link text-white">商店</router-link>

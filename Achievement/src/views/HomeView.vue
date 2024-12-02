@@ -6,13 +6,13 @@
     </div>
     <div class="d-flex jcontainer row p-3 gap-0">    
       <Characters class="col-xl-4 col-lg-4  col-sm-12"/>
-      <Characters class="col-xl-4 col-lg-4 "/>
-      <Characters class="col-xl-4 col-lg-4 "/>
+      <Characters class="col-xl-4 col-lg-4 col-md-6 "/>
+      <Characters class="col-xl-4 col-lg-4 col-md-6 "/>
       <Tasks />
     </div> 
 <div  class="d-flex jcontainer row p-4 p-md-2">
-  <Community class="col-xl-7  col-md-7 col-sm-11"/>
-      <Characters class="col-xl-6  col-md-4"/>
+  <Community class="col-xl-6  col-lg-7 col-md-11 col-sm-11"/>
+      <Characters class="col-xl-6 col-lg-4 col-md-12 col-sm-12"/>
 </div>
   </div>
 </template>

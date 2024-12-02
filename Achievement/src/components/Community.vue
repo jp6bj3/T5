@@ -1,8 +1,8 @@
 <template>
-  <div class="container my-1 p-4 bg-dark rounded">
+  <div class="container my-1 p-4 bg-dark rounded shadow-lg">
     <h1 class="mb-4 text-white">Community</h1>
     <div class="row">
-      <div class="col-md-6 col-lg-4" v-for="item in communityItems" :key="item.id">
+      <div class="col-md-4 col-lg-4 col-sm-6" v-for="item in communityItems" :key="item.id">
         <div class="card mb-4">
           <img :src="item.image" class="card-img-top" :alt="item.title">
           <div class="card-body">
