@@ -3,7 +3,7 @@
     <div class="d-flex" style="background-color: blanchedalmond; height: 225px">
       <h1>主視覺</h1>
     </div>
-    <div class="jcontainer flex-row d-lg-flex p-3 gap-2">
+    <div class="jcontainer flex-row d-lg-flex p-4 gap-2">
       <Characters class="col-xl-4 col-lg-4 col-sm-12" />
       <Characters class="col-xl-4 col-lg-4 col-md-12" />
       <Characters class="col-xl-4 col-lg-4 col-md-12" />
@@ -11,9 +11,9 @@
     <div class="row p-4">
       <Tasks />
     </div>
-    <div class="d-flex jcontainer row p-4 p-md-2">
-      <Community class="col-xl-6 col-md-11 col-sm-12" />
-      <Characters class="col-xl-4 col-md-12 col-sm-12" />
+    <div class="d-flex jcontainer row p-4 p-md-2 row gap-1">
+      <Community class="col-xl-7 col-md-11 col-sm-11" />
+      <Characters class="col-xl-4 col-md-12 px-lg-0 px-md-5 px-sm-2" />
     </div>
   </div>
 </template>
