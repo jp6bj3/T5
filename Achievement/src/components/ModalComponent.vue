@@ -10,9 +10,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div id="app">
+        <div id="app" class="rounded bg-dark" style="height: 25rem">
           <!-- 紫色區域 -->
-          <div class="bg-purple text-white p-2 d-flex justify-content-between">
+          <div class="rounded bg-white text-white p-2 d-flex justify-content-between">
             <div>紫色區域</div>
             <div>
               <button class="btn btn-dark btn-sm me-2"></button>
@@ -41,26 +41,12 @@
 
             <!-- 黃色區域 -->
             <div class="bg-yellow p-3" style="width: 30%">
-              <div class="bg-light p-2 mb-3">灰色資料 5</div>
-              <div class="bg-light p-2 mb-3">灰色資料 6</div>
-              <div class="bg-light p-2 mb-3">灰色資料 7</div>
+              <div class="bg-light p-2 mb-3">{{ title }}</div>
+              <div class="bg-light p-2 mb-3">{{ subtitle }}</div>
+              <div class="bg-light p-2 mb-3">{{ description }}</div>
               <div class="bg-light p-2">灰色資料 8</div>
             </div>
           </div>
-        </div>
-        <div class="modal-content">
-          <div class="card" style="width: 18rem">
-            <img :src="imageSrc" class="card-img-top" alt="角色圖片" />
-            <div class="card-body">
-              <h5 class="card-title">{{ title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ subtitle }}</h6>
-              <p class="card-text">{{ description }}</p>
-              <a href="#" class="card-link">連結1</a>
-              <a href="#" class="card-link">連結2</a>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary" @click="hideModal">關閉</button>
-          <button type="button" class="btn btn-primary">保存變更</button>
         </div>
       </div>
     </div>
