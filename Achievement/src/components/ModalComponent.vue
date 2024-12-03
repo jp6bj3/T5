@@ -1,50 +1,47 @@
 <template>
   <div>
-    <button type="button" class="btn btn-primary" @click="showModal">打開彈出式視窗</button>
-
     <div
-      class="modal fade"
-      id="myModal"
+      class="modal"
+      id="characterModal"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="characterModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div id="app" class="rounded bg-dark" style="height: 25rem">
-          <!-- 紫色區域 -->
+        <div class="rounded bg text-black" style="height: 25rem">
+          <!-- Purple Area -->
           <div class="rounded bg-white text-white p-2 d-flex justify-content-between">
-            <div>紫色區域</div>
+            <div>Character Details</div>
             <div>
-              <button class="btn btn-dark btn-sm me-2"></button>
-              <button class="btn btn-dark btn-sm"></button>
+              <button class="btn btn-dark btn-sm me-2" @click="hideModal">Close</button>
             </div>
           </div>
 
-          <!-- 藍色區域 -->
-          <div class="bg-blue d-flex" style="height: calc(100vh - 50px)">
-            <!-- 橘色區域 -->
-            <div class="bg-orange flex-grow-1 p-3 d-flex flex-column">
-              <!-- 橘色內部上方 -->
+          <!-- Blue Area -->
+          <div class="d-flex" style="height: calc(100vh - 50px)">
+            <!-- Orange Area -->
+            <div class="flex-grow-1 p-3 d-flex flex-column">
+              <!-- Orange Inner Top -->
               <div class="d-flex mb-3">
-                <div class="flex-grow-1 bg-light p-2 me-2">灰色資料 1</div>
-                <div class="flex-grow-1 bg-light p-2">灰色資料 2</div>
+                <div class="flex-grow-1 bg-light p-2 me-2">{{ title }}</div>
+                <div class="flex-grow-1 bg-light p-2">{{ subtitle }}</div>
               </div>
-              <!-- 橘色內部下方 -->
+              <!-- Orange Inner Bottom -->
               <div class="d-flex flex-grow-1">
-                <div class="bg-green p-2 me-2 flex-shrink-0" style="width: 20%">綠色區域</div>
+                <div class="bg-green p-2 me-2 flex-shrink-0" style="width: 20%">Background</div>
                 <div class="bg-red flex-grow-1 p-2">
-                  <div class="bg-light p-2 mb-2">灰色資料 3</div>
-                  <div class="bg-light flex-grow-1 p-2">灰色資料 4</div>
+                  <div class="bg-light p-2 mb-2">Character Origin</div>
+                  <div class="bg-light flex-grow-1 p-2">{{ description }}</div>
                 </div>
               </div>
             </div>
 
-            <!-- 黃色區域 -->
+            <!-- Yellow Area -->
             <div class="bg-yellow p-3" style="width: 30%">
-              <div class="bg-light p-2 mb-3">{{ title }}</div>
-              <div class="bg-light p-2 mb-3">{{ subtitle }}</div>
-              <div class="bg-light p-2 mb-3">{{ description }}</div>
-              <div class="bg-light p-2">灰色資料 8</div>
+              <div class="bg-light p-2 mb-3"></div>
+              <div class="bg-light p-2 mb-3"></div>
+              <div class="bg-light p-2 mb-3"></div>
+              <div class="bg-light p-2">Additional Info</div>
             </div>
           </div>
         </div>
@@ -57,31 +54,39 @@
 import { Modal } from 'bootstrap'
 
 export default {
+  props: {
+    title: {
+      type: String,
+    },
+    subtitle: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
+  },
   data() {
     return {
-      title: '角色名稱',
-      subtitle: '描述',
-      description: '這是角色的詳細描述，您可以在這裡提供更多信息。',
-      imageSrc: '', // 替換為實際圖片路徑
+      modalInstance: null,
     }
   },
   methods: {
     showModal() {
-      const modalElement = document.getElementById('myModal')
-      const modal = new Modal(modalElement)
-      modal.show()
+      const modalElement = document.getElementById('characterModal')
+      this.modalInstance = new Modal(modalElement)
+      this.modalInstance.show()
     },
     hideModal() {
-      const modalElement = document.getElementById('myModal')
-      const modal = Modal.getInstance(modalElement)
-      if (modal) {
-        modal.hide()
+      if (this.modalInstance) {
+        this.modalInstance.hide()
       }
     },
   },
 }
 </script>
 
-<style>
-/* 可根據需要添加自定義樣式 */
+<style scoped>
+.bg {
+  background-color: #baa375;
+}
 </style>

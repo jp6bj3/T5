@@ -1,21 +1,28 @@
-import { createRouter, createWebHistory } from "vue-router";
-import Task from "../views/TaskView.vue";
-import Shop from "../views/ShopView.vue";
-import Home from "../views/HomeView.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import Task from '../views/TaskView.vue'
+import Shop from '../views/ShopView.vue'
+import Home from '../views/HomeView.vue'
+import ItemDetailComponent from '../components/ItemDetailComponent.vue' // 商品詳情頁組件
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/Task", name: "Task", component: Task },
-  { path: "/Shop", name: "Shop", component: Shop },
+  { path: '/', name: 'Home', component: Home },
+  { path: '/Task', name: 'Task', component: Task },
+  { path: '/Shop', name: 'Shop', component: Shop },
+  {
+    path: '/item/:id',
+    name: 'ItemDetail',
+    component: ItemDetailComponent,
+    props: true, // 允許將路由參數作為屬性傳遞
+  },
   {
     path: '/',
     redirect: '/task', // 預設跳轉到任務頁
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+})
 
-export default router;
+export default router
