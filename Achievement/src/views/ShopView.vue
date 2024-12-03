@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid py-5">
-    <div class="row">
+    <div class="row gap-0">
       <!-- 左側篩選器 -->
       <div class="col-md-3">
         <div class="sidebar bg-dark text-white p-5">
@@ -32,14 +32,24 @@
             v-for="item in filteredItems"
             :key="item.id"
           >
-            <div class="card mb-4 flex-row">
-              <img :src="item.image" class="card-img-top" alt="商品圖片" />
+            <div class="card mb-4 flex-row px-3">
+              <img
+                :src="item.image"
+                class="card-img-top align-self-center rounded"
+                alt="商品圖片"
+                style="height: 100px; width: 100px"
+              />
               <div class="card-body">
-                <h5 class="card-title">{{ item.name }}</h5>
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p>{{ item.categories }}</p>
+                </div>
                 <p class="card-text">{{ item.description }}</p>
-                <router-link :to="`/item/${item.id}`" class="btn btn-primary"
-                  >{{ item.price }} CC</router-link
-                >
+                <div class="d-flex justify-content-end">
+                  <router-link :to="`/item/${item.id}`" class="btn btn-primary"
+                    >{{ item.price }} CC</router-link
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -63,6 +73,7 @@ export default {
           description: '這是商品1的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.3',
+          categories: '類別1',
         },
         {
           id: 2,
@@ -70,6 +81,7 @@ export default {
           description: '這是商品2的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.9',
+          categories: '類別2',
         },
         {
           id: 3,
@@ -77,6 +89,7 @@ export default {
           description: '這是商品3的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.5',
+          categories: '類別1',
         },
         {
           id: 1,
@@ -84,6 +97,7 @@ export default {
           description: '這是商品1的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.3',
+          categories: '類別3',
         },
         {
           id: 2,
@@ -91,6 +105,7 @@ export default {
           description: '這是商品2的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.9',
+          categories: '類別1',
         },
         {
           id: 3,
@@ -98,6 +113,7 @@ export default {
           description: '這是商品3的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.5',
+          categories: '類別1',
         },
         // 更多商品...
       ],
