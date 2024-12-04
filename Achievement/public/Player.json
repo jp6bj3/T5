@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Heroic Knight",
+    "description": "A brave knight defending the kingdom.",
+    "buttonText": "Discover"
+  },
+  {
+    "id": 2,
+    "name": "Wise Wizard",
+    "description": "Master of magical arts, guiding the team.",
+    "buttonText": "Learn More"
+  },
+  {
+    "id": 3,
+    "name": "Playful Rogue",
+    "description": "Mischievous rogue with a knack for trouble.",
+    "buttonText": "Explore"
+  }
+]

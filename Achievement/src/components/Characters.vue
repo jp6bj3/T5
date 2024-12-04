@@ -65,7 +65,7 @@ export default {
           description: 'A brave knight defending the kingdom.',
           fullDescription:
             'Raised in the royal military academy, dedicated to protecting the realm.',
-          image: 1,
+          image: 'path/to/knight-image.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
         {
@@ -74,7 +74,7 @@ export default {
           description: 'Master of magical arts, guiding the team.',
           fullDescription:
             'Studied in ancient magical traditions, possessing centuries of knowledge.',
-          image: 1,
+          image: 'path/to/wizard-image.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
         {
@@ -82,7 +82,7 @@ export default {
           name: 'Playful Rogue',
           description: 'Mischievous rogue with a knack for trouble.',
           fullDescription: 'Quick-witted and nimble, using cunning to solve complex problems.',
-          image: 1,
+          image: 'path/to/rogue-image.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
       ],
@@ -99,8 +99,6 @@ export default {
 
 <style scoped>
 .container {
-}
-.card {
-  border: none;
+  background-color: #282c34;
 }
 </style>

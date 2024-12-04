@@ -9,7 +9,7 @@
     >
       <div class="modal-dialog">
         <div class="rounded bg text-black" style="height: 25rem">
-          <!-- Purple Area -->
+          <!-- 標題區域 -->
           <div class="rounded bg-white text-white p-2 d-flex justify-content-between">
             <div>Character Details</div>
             <div>
@@ -17,16 +17,16 @@
             </div>
           </div>
 
-          <!-- Blue Area -->
+          <!-- 內容區域 -->
           <div class="d-flex" style="height: calc(100vh - 50px)">
-            <!-- Orange Area -->
+            <!-- 左側內容 -->
             <div class="flex-grow-1 p-3 d-flex flex-column">
-              <!-- Orange Inner Top -->
+              <!-- 上方內容 -->
               <div class="d-flex mb-3">
                 <div class="flex-grow-1 bg-light p-2 me-2">{{ title }}</div>
                 <div class="flex-grow-1 bg-light p-2">{{ subtitle }}</div>
               </div>
-              <!-- Orange Inner Bottom -->
+              <!-- 下方內容 -->
               <div class="d-flex flex-grow-1">
                 <div class="bg-green p-2 me-2 flex-shrink-0" style="width: 20%">Background</div>
                 <div class="bg-red flex-grow-1 p-2">
@@ -36,7 +36,7 @@
               </div>
             </div>
 
-            <!-- Yellow Area -->
+            <!-- 右側額外資訊 -->
             <div class="bg-yellow p-3" style="width: 30%">
               <div class="bg-light p-2 mb-3"></div>
               <div class="bg-light p-2 mb-3"></div>

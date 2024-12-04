@@ -3,6 +3,7 @@ import Task from '../views/TaskView.vue'
 import Shop from '../views/ShopView.vue'
 import Home from '../views/HomeView.vue'
 import ItemDetailComponent from '../components/ItemDetailComponent.vue' // 商品詳情頁組件
+import Achievementrask from '../components/Achievementrask.vue' // 商品詳情頁組件
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -12,6 +13,12 @@ const routes = [
     path: '/item/:id',
     name: 'ItemDetail',
     component: ItemDetailComponent,
+    props: true, // 允許將路由參數作為屬性傳遞
+  },
+  {
+    path: '/Task/:id',
+    name: 'Achievementrask',
+    component: Achievementrask,
     props: true, // 允許將路由參數作為屬性傳遞
   },
   {
