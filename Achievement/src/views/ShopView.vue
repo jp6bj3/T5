@@ -12,7 +12,12 @@
               v-for="(category, index) in categories"
               :key="category"
             >
-              <input type="checkbox" :id="`category-${index}`" />
+              <input
+                type="checkbox"
+                :id="`category-${index}`"
+                :value="category"
+                v-model="selectedCategories"
+              />
               <label :for="`category-${index}`" class="ms-2"> {{ category }} </label>
             </li>
           </ul>
@@ -76,7 +81,7 @@ export default {
   data() {
     return {
       categories: ['類別1', '類別2', '類別3'],
-      selectedCategory: '',
+      selectedCategories: [], // 儲存選擇的類別
       searchQuery: '',
       items: [
         {
@@ -104,25 +109,25 @@ export default {
           categories: '類別1',
         },
         {
-          id: 1,
-          name: '商品1',
-          description: '這是商品1的描述',
+          id: 4,
+          name: '商品4',
+          description: '這是商品4的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.3',
           categories: '類別3',
         },
         {
-          id: 2,
-          name: '商品2',
-          description: '這是商品2的描述',
+          id: 5,
+          name: '商品測試5',
+          description: '這是商品5的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.9',
           categories: '類別1',
         },
         {
-          id: 3,
-          name: '商品3',
-          description: '這是商品3的描述',
+          id: 6,
+          name: '測試商品6',
+          description: '這是商品6的描述',
           image: 'https://via.placeholder.com/150',
           price: '0.5',
           categories: '類別1',
@@ -134,10 +139,10 @@ export default {
   computed: {
     filteredItems() {
       return this.items.filter((item) => {
-        return (
-          (this.selectedCategory === '' || item.category === this.selectedCategory) &&
-          item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-        )
+        const matchesCategory =
+          this.selectedCategories.length === 0 || this.selectedCategories.includes(item.categories)
+        const matchesSearch = item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+        return matchesCategory && matchesSearch
       })
     },
   },
