@@ -13,7 +13,7 @@
     </div>
     <div class="d-flex jcontainer row p-4 p-md-2 row gap-1">
       <Community class="col-xl-7 col-md-11 col-sm-11" />
-      <Characters class="col-xl-4 col-md-12 px-lg-0 px-md-5 px-sm-2" />
+      <Characters class="col-xl-4 col-md-11 px-lg-0 px-md-5 px-sm-2" />
     </div>
   </div>
 </template>

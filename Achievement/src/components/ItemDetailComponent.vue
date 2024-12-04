@@ -76,14 +76,22 @@
         </div>
       </div>
     </div>
-    <div class="text-white">社群趨勢</div>
+    <div class="text-white row">
+      <p>社群討論與持股(待串接API、目前簡陋版)</p>
+      <Trades class="col-md-8 col-sm-12 bg-dark" />
+      <HolderDistribution class="col-md-4 col-sm-12 py-3" />
+    </div>
   </div>
 </template>
 
 <script>
+import Trades from './Trades.vue'
+import HolderDistribution from './HolderDistribution.vue'
+
 export default {
   props: ['id'],
   name: 'TradingInterface',
+  components: { Trades, HolderDistribution },
   data() {
     return {
       item: null,

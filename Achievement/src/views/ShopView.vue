@@ -1,13 +1,14 @@
 <template>
-  <div class="container-fluid py-5">
+  <div class="container-fluid p-5">
     <div class="row gap-0">
       <!-- 左側篩選器 -->
-      <div class="col-md-3">
-        <div class="sidebar bg-dark text-white p-5">
+      <div class="col-md-3 col-sm-12 px-4 px-md-2 px-sm-0">
+        <div class="text-white bg-dark p-5 p-md-5 mb-4 rounded">
           <h2>Shop</h2>
           <ul class="list-group">
             <li
-              class="list-group-item bg-dark border-0 text-white"
+              class="p-2 border-0 text-white no-wrap"
+              style="list-style: none"
               v-for="(category, index) in categories"
               :key="category"
             >
@@ -32,21 +33,32 @@
             v-for="item in filteredItems"
             :key="item.id"
           >
-            <div class="card mb-4 flex-row px-3">
+            <div
+              class="card mb-4 flex-row px-3 text-white blue shadow-lg"
+              style="border: solid grey 1px"
+            >
               <img
                 :src="item.image"
-                class="card-img-top align-self-center rounded"
+                class="card-img-top align-self-center rounded shadow-sm"
                 alt="商品圖片"
-                style="height: 100px; width: 100px"
+                style="height: 100px; width: 100px; border: solid grey 2px"
               />
               <div class="card-body">
                 <div class="d-flex justify-content-between">
-                  <h5 class="card-title">{{ item.name }}</h5>
-                  <p>{{ item.categories }}</p>
+                  <h5 class="card-title pt-2">{{ item.name }}</h5>
+                  <p
+                    class="p-2 bg-white text-black position-absolute top-0 end-0"
+                    style="border-radius: 0 15% 0 15%"
+                  >
+                    {{ item.categories }}
+                  </p>
                 </div>
                 <p class="card-text">{{ item.description }}</p>
                 <div class="d-flex justify-content-end">
-                  <router-link :to="`/item/${item.id}`" class="btn btn-primary"
+                  <router-link
+                    :to="`/item/${item.id}`"
+                    class="btn btn-primary bg-dark"
+                    style="border: none"
                     >{{ item.price }} CC</router-link
                   >
                 </div>
@@ -133,6 +145,9 @@ export default {
 </script>
 
 <style scoped>
+.blue {
+  background: #7fa39f;
+}
 .sidebar {
   width: 250px; /* 設置側邊欄寬度 */
 }
