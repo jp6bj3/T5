@@ -14,20 +14,6 @@
       <div class="col-md-9 main-content">
         <h3 class="text-light">任務詳細</h3>
         <Accordion />
-        <!-- <div class="card bg-dark text-light mb-4">
-          <div class="card-body">
-            <h5 class="task-title">{{ selectedTask.title }}</h5>
-            <p class="task-description">{{ selectedTask.description }}</p>
-            <p class="price">{{ selectedTask.price }} CC</p>
-            <router-link
-              :to="`/item/${selectedTask.id}`"
-              class="btn btn-primary"
-              style="border-radius: 20px; background-color: #007bff; border: none"
-            >
-              查看詳情
-            </router-link>
-          </div>
-        </div> -->
 
         <h4 class="text-light">其他任務</h4>
         <ul class="list-group">

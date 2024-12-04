@@ -79,7 +79,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: #1e1e2f; /* 深色背景 */
   color: #f8f9fa; /* 浅色文字 */
