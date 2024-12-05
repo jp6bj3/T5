@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Systemoverview from './Systemoverview.vue'
-import Systemlobby from './Systemlobby.vue'
-import Community from './Community.vue'
-import Founder from './Founder.vue'
+import Systemoverview from '../components/Systemoverview.vue'
+import Systemlobby from '../components/Systemlobby.vue'
+import Community from '../components/Community.vue'
+import Founder from '../components/Founder.vue'
 export default {
   components: {
     Systemoverview,
