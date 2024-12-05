@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import Trades from '../components/Tasks.vue'
+import Trades from '../components/Trades.vue'
 import HolderDistribution from '../components/HolderDistribution.vue'
 
 export default {
