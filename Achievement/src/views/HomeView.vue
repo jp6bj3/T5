@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <div class="d-flex" style="background-color: blanchedalmond; height: 225px">
-      <h1>主視覺</h1>
+    <div class="row">
+      <div class="col-12">
+        <img src="../../public/img/banner.png" alt="" class="img-fluid" />
+      </div>
     </div>
     <div class="jcontainer flex-row d-lg-flex p-4 gap-2">
       <Characters class="col-xl-4 col-lg-4 col-sm-12" />
