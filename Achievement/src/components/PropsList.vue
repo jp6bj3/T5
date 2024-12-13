@@ -13,10 +13,9 @@
       <div v-for="item in propsList" :key="item.id" class="card bg-secondary text-white mb-3">
         <div class="card-body d-flex row align-items-center justify-content-center">
           <img
-            :src="item.image"
+            :src="parseImg(item.image)"
             alt="Character Image"
-            class="rounded-circle me-3 col-xl-4 col-md-12"
-            style="width: 64px; height: 64px"
+            class="rounded-circle me-3 col-xl-4 col-md-12 w-25"
           />
           <div
             class="flex-grow-1 col-md-12 mb-xl-0 mb-md-2 col-xl-4 d-flex flex-column align-items-center justify-content-center"
@@ -46,16 +45,15 @@ export default {
   components: { ModalComponent },
   data() {
     return {
-      selectedPropsList: {}, // 將變量名稱更正
+      selectedPropsList: {},
       propsList: [
-        // 將變量名稱更正
         {
           id: 1,
           name: 'Heroic Knight',
           description: 'A brave knight defending the kingdom.',
           fullDescription:
             'Raised in the royal military academy, dedicated to protecting the realm.',
-          image: '/img/knight-image.png', // 確保路徑正確
+          image: 'Book.png', // 確保路徑正確
           buttonText: 'Discover',
         },
         {
@@ -64,7 +62,7 @@ export default {
           description: 'Master of magical arts, guiding the team.',
           fullDescription:
             'Studied in ancient magical traditions, possessing centuries of knowledge.',
-          image: '/img/wizard-image.png', // 確保路徑正確
+          image: 'sword.png', // 確保路徑正確
           buttonText: 'Discover',
         },
         {
@@ -72,7 +70,7 @@ export default {
           name: 'Playful Rogue',
           description: 'Mischievous rogue with a knack for trouble.',
           fullDescription: 'Quick-witted and nimble, using cunning to solve complex problems.',
-          image: '/img/rogue-image.png', // 確保路徑正確
+          image: 'Potion.png', // 確保路徑正確
           buttonText: 'Discover',
         },
       ],
@@ -80,9 +78,11 @@ export default {
   },
   methods: {
     openPropsListModal(item) {
-      // 將參數名稱更正
-      this.selectedPropsList = item // 將變量名稱更正
-      this.$refs.propsListModal.showModal() // 將 ref 名稱更正
+      this.selectedPropsList = item
+      this.$refs.propsListModal.showModal()
+    },
+    parseImg(imgURL) {
+      return new URL(`../img/${imgURL}`, import.meta.url).href
     },
   },
 }

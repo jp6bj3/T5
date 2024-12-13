@@ -18,7 +18,7 @@
         </div>
         <div v-else class="d-flex align-items-center">
           <!-- 當 WalletConnect 按鈕被按下後顯示這三個 RouterLink -->
-          <RouterLink to="/Profile" class="nav-link text-white">個人任務</RouterLink>
+          <RouterLink to="/Profile" class="nav-link text-white">任務</RouterLink>
           <button class="text-white btn btn-secondary me-3" @click="openCharacterModal(character)">
             個人資料
           </button>

@@ -33,6 +33,12 @@
 
 <script>
 export default {
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       // 用於控制每個手風琴項目的開合狀態

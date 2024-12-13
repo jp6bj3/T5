@@ -7,13 +7,11 @@
 <script>
 import Systemoverview from '../components/Systemoverview.vue'
 import Systemlobby from '../components/Systemlobby.vue'
-import Community from '../components/Community.vue'
 import Founder from '../components/Founder.vue'
 export default {
   components: {
     Systemoverview,
     Systemlobby,
-    Community,
     Founder,
   },
   data() {

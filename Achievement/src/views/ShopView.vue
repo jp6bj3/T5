@@ -39,14 +39,14 @@
             :key="item.id"
           >
             <div
-              class="card mb-4 flex-row px-3 text-white blue shadow-lg"
+              class="card mb-4 flex-row px-3 text-white bg-secondary shadow-lg"
               style="border: solid grey 1px"
             >
               <img
-                :src="item.image"
-                class="card-img-top align-self-center rounded shadow-sm"
+                :src="parseImg(item.image)"
+                class="card-img-top align-self-center rounded shadow-sm w-25 blue"
                 alt="商品圖片"
-                style="height: 100px; width: 100px; border: solid grey 2px"
+                style="border: solid grey 2px"
               />
               <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -80,7 +80,7 @@
 export default {
   data() {
     return {
-      categories: ['類別1', '類別2', '類別3'],
+      categories: ['期間限定', '任務獲得', '成就限定'],
       selectedCategories: [], // 儲存選擇的類別
       searchQuery: '',
       items: [
@@ -88,49 +88,49 @@ export default {
           id: 1,
           name: '商品1',
           description: '這是商品1的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.3',
-          categories: '類別1',
+          categories: '期間限定',
         },
         {
           id: 2,
           name: '商品2',
           description: '這是商品2的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.9',
-          categories: '類別2',
+          categories: '任務獲得',
         },
         {
           id: 3,
           name: '商品3',
           description: '這是商品3的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.5',
-          categories: '類別1',
+          categories: '期間限定',
         },
         {
           id: 4,
           name: '商品4',
           description: '這是商品4的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.3',
-          categories: '類別3',
+          categories: '成就限定',
         },
         {
           id: 5,
           name: '商品測試5',
           description: '這是商品5的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.9',
-          categories: '類別1',
+          categories: '期間限定',
         },
         {
           id: 6,
           name: '測試商品6',
           description: '這是商品6的描述',
-          image: 'https://via.placeholder.com/150',
+          image: 'Book.png',
           price: '0.5',
-          categories: '類別1',
+          categories: '期間限定',
         },
         // 更多商品...
       ],
@@ -144,6 +144,11 @@ export default {
         const matchesSearch = item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
         return matchesCategory && matchesSearch
       })
+    },
+  },
+  methods: {
+    parseImg(imgURL) {
+      return new URL(`../img/${imgURL}`, import.meta.url).href
     },
   },
 }

@@ -16,6 +16,11 @@
         class="card bg-secondary text-white mb-3"
       >
         <div class="card-body d-flex row align-items-center justify-content-center">
+          <img
+            :src="parseImg(character.image)"
+            alt="Character Image"
+            class="rounded-circle me-3 col-xl-4 col-md-12 w-25"
+          />
           <div
             class="flex-grow-1 col-md-12 mb-xl-0 mb-md-2 col-xl-4 d-flex flex-column align-items-center justify-content-center"
           >
@@ -52,7 +57,7 @@ export default {
           description: 'A brave knight defending the kingdom.',
           fullDescription:
             'Raised in the royal military academy, dedicated to protecting the realm.',
-          image: 'path/to/knight-image.png', // 替換為實際圖片路徑
+          image: 'diamond.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
         {
@@ -61,7 +66,7 @@ export default {
           description: 'Master of magical arts, guiding the team.',
           fullDescription:
             'Studied in ancient magical traditions, possessing centuries of knowledge.',
-          image: 'path/to/wizard-image.png', // 替換為實際圖片路徑
+          image: 'gold.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
         {
@@ -69,11 +74,16 @@ export default {
           name: 'Playful Rogue',
           description: 'Mischievous rogue with a knack for trouble.',
           fullDescription: 'Quick-witted and nimble, using cunning to solve complex problems.',
-          image: 'path/to/rogue-image.png', // 替換為實際圖片路徑
+          image: 'silver.png', // 替換為實際圖片路徑
           buttonText: 'Discover',
         },
       ],
     }
+  },
+  methods: {
+    parseImg(imgURL) {
+      return new URL(`../img/${imgURL}`, import.meta.url).href
+    },
   },
 }
 </script>

@@ -33,33 +33,7 @@
           </div>
         </div>
         <div class="row py-4">
-          <div class="col-12" v-for="task in filteredTasks" :key="task.id">
-            <div
-              class="card mb-4 flex-row px-3 text-white blue shadow-lg"
-              style="border: solid grey 1px"
-            >
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <h5 class="card-title pt-2">{{ task.title }}</h5>
-                  <p
-                    class="p-2 bg-white text-black position-absolute top-0 end-0"
-                    style="border-radius: 0 15% 0 15%"
-                  >
-                    {{ task.status }}
-                  </p>
-                </div>
-                <p class="card-text">{{ task.description }}</p>
-                <div class="d-flex justify-content-end">
-                  <router-link
-                    :to="`/task/${task.id}`"
-                    class="btn btn-primary bg-dark"
-                    style="border: none"
-                    >查看詳情</router-link
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+          <List class="col-12" v-for="task in filteredTasks" :key="task.id" :task="task" />
         </div>
       </div>
     </div>
@@ -67,10 +41,20 @@
 </template>
 
 <script>
+import List from '../components/List.vue'
+
 export default {
+  components: {
+    List,
+  },
+  methods: {
+    parseImg(imgURL) {
+      return new URL(`../img/${imgURL}`, import.meta.url).href
+    },
+  },
   data() {
     return {
-      statuses: ['待辦', '進行中', '已完成'], // 任務狀態
+      statuses: ['進行中', '未開始'], // 任務狀態
       selectedStatuses: [], // 儲存選擇的任務狀態
       searchQuery: '',
       tasks: [
@@ -78,37 +62,15 @@ export default {
           id: 1,
           title: '任務1',
           description: '這是任務1的描述',
-          status: '待辦',
+          status: '進行中',
+          img: 'gold.png', // 使用絕對路徑
         },
         {
           id: 2,
           title: '任務2',
           description: '這是任務2的描述',
-          status: '進行中',
-        },
-        {
-          id: 3,
-          title: '任務3',
-          description: '這是任務3的描述',
-          status: '已完成',
-        },
-        {
-          id: 4,
-          title: '任務4',
-          description: '這是任務4的描述',
-          status: '待辦',
-        },
-        {
-          id: 5,
-          title: '任務測試5',
-          description: '這是任務5的描述',
-          status: '進行中',
-        },
-        {
-          id: 6,
-          title: '測試任務6',
-          description: '這是任務6的描述',
-          status: '已完成',
+          status: '未開始',
+          img: 'diamond.png',
         },
         // 更多任務...
       ],
