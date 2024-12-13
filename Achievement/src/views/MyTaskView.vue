@@ -97,15 +97,15 @@
         </div>
 
         <!-- 新增任務表單 -->
-        <div v-if="currentView === 'create'" class="bg-secondary text-white p-4 rounded shadow">
-          <h3 class="mb-4">新增任務</h3>
+        <div v-if="currentView === 'create'" class="bg-secondary p-4 rounded shadow">
+          <h3 class="mb-4 text-white">新增任務</h3>
           <form @submit.prevent="addTask">
             <div class="row mb-3">
               <div class="col-md-6">
                 <label class="form-label">任務標題</label>
                 <input
                   type="text"
-                  class="form-control text-white"
+                  class="form-control text-black"
                   v-model="newTask.title"
                   required
                 />
@@ -123,24 +123,29 @@
             <div class="mb-3">
               <label class="form-label">任務描述</label>
               <textarea
-                class="form-control text-white"
+                class="form-control text-black"
                 rows="4"
                 v-model="newTask.description"
                 required
               ></textarea>
             </div>
 
-            <div class="mb-3">
-              <label class="form-label">任務圖片</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control text-white"
-                  v-model="newTask.img"
-                  placeholder="輸入圖片檔名 (例如: task.png)"
-                />
-                <button class="btn btn-outline-light" type="button">選擇圖片</button>
+            <label class="form-label">任務圖片</label>
+            <div class="mb-3 d-flex">
+              <div v-if="newTask.img === '鑽'">
+                <img src="../img/diamond.png" class="w-25" alt="鑽 Image" />
               </div>
+              <div v-if="newTask.img === '金'">
+                <img src="../img/gold.png" class="w-25" alt="金 Image" />
+              </div>
+              <div v-if="newTask.img === '銀'">
+                <img src="../img/silver.png" class="w-25" alt="銀 Image" />
+              </div>
+              <select class="form-select" v-model="newTask.img" required>
+                <option value="鑽">鑽</option>
+                <option value="金">金</option>
+                <option value="銀">銀</option>
+              </select>
             </div>
 
             <div class="d-flex justify-content-end gap-2">
@@ -218,11 +223,24 @@ export default {
       const task = {
         id: this.tasks.length + 1,
         ...this.newTask,
-        isCreatedByUser: true, // 標記為用戶創建的任務
+        img: this.getImagePath(this.newTask.img),
+        isCreatedByUser: true,
       }
       this.tasks.push(task)
       this.resetForm()
-      this.currentView = 'created' // 提交後切換到創建的任務視圖
+      this.currentView = 'created'
+    },
+    getImagePath(imgName) {
+      switch (imgName) {
+        case '鑽':
+          return 'diamond.png'
+        case '金':
+          return 'gold.png'
+        case '銀':
+          return 'silver.png'
+        default:
+          return ''
+      }
     },
     resetForm() {
       this.newTask = {
