@@ -70,7 +70,7 @@
 export default {
   data() {
     return {
-      statuses: ['休閒', '新手任務', '熱門'], // 任務狀態
+      statuses: ['待辦', '進行中', '已完成'], // 任務狀態
       selectedStatuses: [], // 儲存選擇的任務狀態
       searchQuery: '',
       tasks: [
@@ -78,37 +78,37 @@ export default {
           id: 1,
           title: '任務1',
           description: '這是任務1的描述',
-          status: '休閒',
+          status: '待辦',
         },
         {
           id: 2,
           title: '任務2',
           description: '這是任務2的描述',
-          status: '新手任務',
+          status: '進行中',
         },
         {
           id: 3,
           title: '任務3',
           description: '這是任務3的描述',
-          status: '熱門',
+          status: '已完成',
         },
         {
           id: 4,
           title: '任務4',
           description: '這是任務4的描述',
-          status: '休閒',
+          status: '待辦',
         },
         {
           id: 5,
           title: '任務測試5',
           description: '這是任務5的描述',
-          status: '新手任務',
+          status: '進行中',
         },
         {
           id: 6,
           title: '測試任務6',
           description: '這是任務6的描述',
-          status: '熱門',
+          status: '已完成',
         },
         // 更多任務...
       ],

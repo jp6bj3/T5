@@ -4,11 +4,13 @@ import Shop from '../views/ShopView.vue'
 import Home from '../views/HomeView.vue'
 import ItemDetailComponent from '../views/ItemDetailComponent.vue' // 商品詳情頁組件
 import Achievementrask from '../views/Achievementrask.vue' // 成就任務組件
+import Profile from '../views/MyTaskView.vue' // 成就任務組件
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/Task', name: 'Task', component: Task },
   { path: '/Shop', name: 'Shop', component: Shop },
+  { path: '/Profile', name: 'Profile', component: Profile },
   {
     path: '/item/:id',
     name: 'ItemDetail',

@@ -2,13 +2,13 @@
   <div class="container text-white p-1">
     <div class="bg-dark p-4 rounded shadow-lg">
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h4 fw-bold">活躍人物</h1>
+        <h1 class="h4 fw-bold">熱門任務</h1>
         <button class="btn btn-outline-light btn-sm">
           <i class="fas">10</i>
         </button>
       </div>
 
-      <p class="text-secondary small">活躍於領域的人士</p>
+      <p class="text-secondary small">最多人參與</p>
 
       <div
         v-for="character in characters"
@@ -16,12 +16,6 @@
         class="card bg-secondary text-white mb-3"
       >
         <div class="card-body d-flex row align-items-center justify-content-center">
-          <img
-            :src="character.image"
-            alt="Character Image"
-            class="rounded-circle me-3 col-xl-4 col-md-12"
-            style="width: 64px; height: 64px"
-          />
           <div
             class="flex-grow-1 col-md-12 mb-xl-0 mb-md-2 col-xl-4 d-flex flex-column align-items-center justify-content-center"
           >
@@ -30,22 +24,15 @@
               {{ character.description }}
             </p>
           </div>
-          <button
+          <router-link
+            :to="`/task/${character.id}`"
             class="btn btn-success p-2 my-1 mx-xl-2 mx-md-0 no-wrap col-md-11 col-xl-2"
-            @click="openCharacterModal(character)"
-          >
-            {{ character.buttonText }}
-          </button>
+            style="border: none"
+            >{{ character.buttonText }}
+          </router-link>
         </div>
       </div>
     </div>
-
-    <modal-component
-      ref="characterModal"
-      :title="selectedCharacter.name"
-      :subtitle="selectedCharacter.description"
-      :description="selectedCharacter.fullDescription"
-    />
   </div>
 </template>
 
@@ -53,7 +40,7 @@
 import ModalComponent from './ModalComponent.vue'
 
 export default {
-  name: 'Characters',
+  name: 'TaskList',
   components: { ModalComponent },
   data() {
     return {
@@ -87,12 +74,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    openCharacterModal(character) {
-      this.selectedCharacter = character
-      this.$refs.characterModal.showModal()
-    },
   },
 }
 </script>

@@ -2,22 +2,18 @@
   <div class="container text-white p-1">
     <div class="bg-dark p-4 rounded shadow-lg">
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h4 fw-bold">活躍人物</h1>
+        <h1 class="h4 fw-bold">熱門道具</h1>
         <button class="btn btn-outline-light btn-sm">
           <i class="fas">10</i>
         </button>
       </div>
 
-      <p class="text-secondary small">活躍於領域的人士</p>
+      <p class="text-secondary small">道具產品</p>
 
-      <div
-        v-for="character in characters"
-        :key="character.id"
-        class="card bg-secondary text-white mb-3"
-      >
+      <div v-for="item in propsList" :key="item.id" class="card bg-secondary text-white mb-3">
         <div class="card-body d-flex row align-items-center justify-content-center">
           <img
-            :src="character.image"
+            :src="item.image"
             alt="Character Image"
             class="rounded-circle me-3 col-xl-4 col-md-12"
             style="width: 64px; height: 64px"
@@ -25,27 +21,20 @@
           <div
             class="flex-grow-1 col-md-12 mb-xl-0 mb-md-2 col-xl-4 d-flex flex-column align-items-center justify-content-center"
           >
-            <h5 class="card-title mb-1">{{ character.name }}</h5>
+            <h5 class="card-title mb-1">{{ item.name }}</h5>
             <p class="card-text small text-light text-center">
-              {{ character.description }}
+              {{ item.description }}
             </p>
           </div>
-          <button
+          <router-link
+            :to="`/item/${item.id}`"
             class="btn btn-success p-2 my-1 mx-xl-2 mx-md-0 no-wrap col-md-11 col-xl-2"
-            @click="openCharacterModal(character)"
-          >
-            {{ character.buttonText }}
-          </button>
+            style="border: none"
+            >{{ item.buttonText }}
+          </router-link>
         </div>
       </div>
     </div>
-
-    <modal-component
-      ref="characterModal"
-      :title="selectedCharacter.name"
-      :subtitle="selectedCharacter.description"
-      :description="selectedCharacter.fullDescription"
-    />
   </div>
 </template>
 
@@ -53,19 +42,20 @@
 import ModalComponent from './ModalComponent.vue'
 
 export default {
-  name: 'Characters',
+  name: 'PropsList', // 將組件名稱更正
   components: { ModalComponent },
   data() {
     return {
-      selectedCharacter: {},
-      characters: [
+      selectedPropsList: {}, // 將變量名稱更正
+      propsList: [
+        // 將變量名稱更正
         {
           id: 1,
           name: 'Heroic Knight',
           description: 'A brave knight defending the kingdom.',
           fullDescription:
             'Raised in the royal military academy, dedicated to protecting the realm.',
-          image: 'path/to/knight-image.png', // 替換為實際圖片路徑
+          image: '/img/knight-image.png', // 確保路徑正確
           buttonText: 'Discover',
         },
         {
@@ -74,7 +64,7 @@ export default {
           description: 'Master of magical arts, guiding the team.',
           fullDescription:
             'Studied in ancient magical traditions, possessing centuries of knowledge.',
-          image: 'path/to/wizard-image.png', // 替換為實際圖片路徑
+          image: '/img/wizard-image.png', // 確保路徑正確
           buttonText: 'Discover',
         },
         {
@@ -82,19 +72,22 @@ export default {
           name: 'Playful Rogue',
           description: 'Mischievous rogue with a knack for trouble.',
           fullDescription: 'Quick-witted and nimble, using cunning to solve complex problems.',
-          image: 'path/to/rogue-image.png', // 替換為實際圖片路徑
+          image: '/img/rogue-image.png', // 確保路徑正確
           buttonText: 'Discover',
         },
       ],
     }
   },
   methods: {
-    openCharacterModal(character) {
-      this.selectedCharacter = character
-      this.$refs.characterModal.showModal()
+    openPropsListModal(item) {
+      // 將參數名稱更正
+      this.selectedPropsList = item // 將變量名稱更正
+      this.$refs.propsListModal.showModal() // 將 ref 名稱更正
     },
   },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* 您的樣式 */
+</style>
