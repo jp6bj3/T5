@@ -7,8 +7,8 @@
       aria-labelledby="characterModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="rounded bg text-black" style="height: 25rem">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="rounded bg text-black modal-content">
           <!-- 標題區域 -->
           <div class="rounded bg-white text-white p-2 d-flex justify-content-between">
             <div>Character Details</div>
@@ -88,5 +88,9 @@ export default {
 <style scoped>
 .bg {
   background-color: #baa375;
+}
+
+.modal-content {
+  height: 25rem;
 }
 </style>
