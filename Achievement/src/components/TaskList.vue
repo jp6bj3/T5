@@ -62,7 +62,7 @@ export default {
         },
         {
           id: 2,
-          name: 'Wise Wizard',
+          name: '月底吃土王',
           description: 'Master of magical arts, guiding the team.',
           fullDescription:
             'Studied in ancient magical traditions, possessing centuries of knowledge.',
@@ -71,7 +71,7 @@ export default {
         },
         {
           id: 3,
-          name: 'Playful Rogue',
+          name: '早餐之神',
           description: 'Mischievous rogue with a knack for trouble.',
           fullDescription: 'Quick-witted and nimble, using cunning to solve complex problems.',
           image: 'silver.png', // 替換為實際圖片路徑
